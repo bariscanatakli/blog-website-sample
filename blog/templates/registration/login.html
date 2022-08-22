@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+<div class="section full-height" style="height: 600px;">
+    <div class="absolute-center">
+        <div class="section">
+            
+                <form method="POST">
+                    <div class="wrapper mt-sm-5">
+                        
+                        <div class="py-3" style="text-align: center;">
+                            <div class="row py-3">
+                                <div class="col-md-12">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <div class="row py-3">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block">Giriş Yap</button> </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

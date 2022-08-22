@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile Page{% endblock title %}
+
+{% block content %}
+
+
+
+<div class="section full-height" style="height: 600px;">
+    <div class="absolute-center">
+        <div class="section">
+            
+            <form method="POST">
+                <div class="wrapper mt-sm-5">
+                    
+                    <div class="d-flex align-items-start py-3 border-bottom"> <img
+                            src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            class="img" alt="">
+                        <div class="pl-sm-4 pl-2" id="img-section"> <b>Profil Fotoğrafı</b>
+                            <p>Profil fotoğrafınız 1 MB'dan küçük ve .jpg uzantılı olmalıdır.</p> <button
+                                class="btn button border"><b>Yükle</b></button>
+                        </div>
+                    </div>
+                    <div class="py-2">
+                        <div class="row py-2">
+                            <div class="col-md-6">
+                                name </div>
+                            <div class="col-md-6 pt-md-0 pt-3">
+                                {{form.username}} </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-md-6">
+                                {{form.email}}
+            
+                            </div>
+                            <div class="col-md-6 pt-md-0 pt-3"> tel no
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-md-6">
+                                {{user.username}} </div>
+                            <div class="col-md-6 pt-md-0 pt-3">
+                                birthday </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-md-6">
+                                education </div>
+                            <div class="col-md-6 pt-md-0 pt-3">
+                                section </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-md-6"> country </div>
+                            <div class="col-md-6 pt-md-0 pt-3" id="lang">
+                                language </div>
+                        </div>
+                    </div>
+                    <div class="py-3 pb-4 border-bottom"> <button type="submit"
+                            class="btn btn-primary mr-3">Değişiklikleri Kaydet</button>
+                        <a class="btn border button" href="/dashboard">
+                            Kapat</a>
+                    </div>
+                    <div class="d-sm-flex align-items-center pt-3" id="deactivate">
+                        <div> <b>Hesabını sil</b>
+                            <p>Dikkatli olun. Bu işlem hesabınızı siler</p>
+                        </div>
+                        <div class="ml-auto"> <button class="btn danger">
+                                <a href="/delete/{{session.id}}">Hesabı sil</a>
+                            </button> </div>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

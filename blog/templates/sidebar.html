@@ -1,0 +1,28 @@
+{% block sidebar %}
+
+<style>
+        .card{
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+
+</style>
+
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4 float-right ">
+<div class="card my-4">
+    <div class="list-group">
+        {% for post in postList %}
+        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ post.title }}</h5>
+            <small>3 days ago</small>
+          </div>
+          <p class="mb-1">Some placeholder content in a paragraph.</p>
+          <small>And some small print.</small>
+        </a>
+        {% endfor %}
+      </div>
+</div>
+</div>
+
+{% endblock sidebar %}

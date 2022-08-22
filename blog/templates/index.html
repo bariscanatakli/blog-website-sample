@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+    {% for post in post_list %}<div id="wrapper" class="mt-sm-5 wrapper " style="height: 600px; overflow:auto;">
+      <div class="d-flex align-items-start py-3 border-bottom postdiv"> <img
+              src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              class="img" alt="">
+          <div class="pl-sm-4 pl-3" id="img-section"> <b><a href="{% url 'post_detail' post.slug%}">{{post.title}}</a>
+                  {{post.slug}} - {{post.author}}</b>
+                  <p>{{post.updated_on}}</p>
+              
+               
+          </div>
+      </div>
+      <div class="post"> {{post.content|safe}}</div>
+  </div>
+    </div>{% endfor %}
+
+
+
+
+
+
+
+{% if is_paginated %}
+<nav aria-label="Page navigation conatiner"></nav>
+<ul class="pagination justify-content-center">
+  {% if page_obj.has_previous %}
+  <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+  {% endif %}
+  {% if page_obj.has_next %}
+  <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+  {% endif %}
+</ul>
+</nav>
+</div>
+{% endif %}
+{%endblock%}
